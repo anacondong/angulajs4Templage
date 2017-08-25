@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
+
+class Hero {
+	id: string;
+    name: string;
+    constructor(id: string,name: string) {this.id=id;this.name=name;}
+}
 
 @Component({
   selector: 'app-hero-list',
@@ -7,9 +14,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroListComponent implements OnInit {
 
-  constructor() { }
+  heroes: any = [];
+  name = 'anacondong size 9';
+  data: any = [new Hero("1","dong"),new Hero("2","off")];
+  
+  constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+  
+    this.heroService.findAll().subscribe(response => {
+      this.heroes = response.data;
+    });
   }
 
 }

@@ -8,7 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
-
+import { HeroService } from './hero.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import { HeroListComponent } from './hero-list/hero-list.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HeroService],
+  bootstrap: [AppComponent,AboutComponent,HomeComponent,PersonComponent,HeroListComponent]
 })
 export class AppModule { }
