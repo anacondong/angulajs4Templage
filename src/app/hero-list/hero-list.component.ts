@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
 
+
 class Hero {
 	id: string;
     name: string;
     constructor(id: string,name: string) {this.id=id;this.name=name;}
 }
+
+
 
 @Component({
   selector: 'app-hero-list',
